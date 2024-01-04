@@ -1,0 +1,232 @@
+body {
+    overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+#root {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #181818;
+}
+
+.main-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    padding-top: 45px;
+}
+main {
+    width: 55%;
+    height: 100%;
+
+    padding-top: 12px;
+    font-family: 'Segoe UI';
+}
+select {
+    background-color: transparent;
+    color: #e3e3e3;
+
+    >option {
+        background-color: #313131;
+        color: #e6e6e6;
+    }
+}
+
+.task-list-accordion {    
+    
+    padding-block: 8px 12px;
+
+    >.accordion-header {
+        display: flex;
+        align-items: center;
+        
+        column-gap: 12px;
+
+        padding-inline: 12px;
+        padding-block: 12px;
+
+        border-radius: 12px 12px 0 0;
+
+        background-color: #222239;
+
+        cursor: pointer;
+        user-select: none;
+        
+        
+        >.header-info-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-grow: 1;
+
+
+            >div {
+                display: flex;
+                column-gap: 8px;
+           
+                >.task-count {
+                    padding-inline: 12px;            
+    
+                    border-radius: 25px;
+    
+                    background-color: #444444;
+                }
+            }
+
+        }
+            
+        >div:last-child {
+            transition: all 0.3s ease-out;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+        }
+    }
+
+}
+.task-list-content-container {
+    background-color: #1e1e1e;
+        
+    overflow: hidden;    
+
+    border-radius: 0 0 12px 12px;
+
+    transition: all 0.3s ease-out;
+
+    padding-inline: 1%;
+
+    >.task-list-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding-block: 24px;
+
+        row-gap: 14px;
+
+        >div:first-child {
+            font-family: 'Material Symbols Outlined';
+            font-size: 48px;
+            font-weight: 100;
+        }
+    }
+}
+
+.closed-accordion {
+    max-height: 0 !important;    
+}
+.arrow-up {
+    transform: rotate(180deg);
+}
+
+
+
+
+.hide {
+    display: none !important;
+}
+.task-card-container {
+    width: 100%;
+    height: fit-content;
+
+    border-radius: 12px;
+
+    padding: 8px;
+    margin-block:12px;
+
+    background-color: #2f2e31;
+
+    >.task-card-proper {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        row-gap: 12px;
+    }
+}
+
+.card-main {
+    display: flex;
+    justify-content: space-between;
+}
+.card-editable-details-container {
+    width: 75%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    row-gap: 8px; 
+
+    >.card-title {
+        font-size: larger;
+        min-width: 80%;
+    }
+    >.card-due-date-container {
+        margin-top: 8px;
+        display: flex;
+        justify-content: start;
+
+        font-size: 16px;
+    }
+}
+.card-selectable-details-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding-block: 2px;
+
+    >select {
+        padding-block: 4px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+
+        background-color: #201f3783;
+    }
+}
+
+.card-options {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    column-gap: 12px;
+
+    >button {
+        background-color: #80808021;
+        font-weight: 100;
+        color: #e3e3e3;
+
+        padding-inline: 12px;
+        padding-block: 4px;
+        border-radius: 25px;
+        border: none;
+    }
+    >.save-card-changes {
+        background-color: #113a5c5e;
+    }
+    >.delete-card {
+        transition: transform 0.2s ease;
+    }
+    >.final-delete {
+        background-color: #a71a1cc0;
+        transform: scale(1.1, 1.0);
+    }
+}
+
+.card-options >button:hover, .card-options >button:active {
+    background-color: #80808050
+}
+.final-delete:hover, .final-delete:active {
+    background-color: #a71a1cc0 !important;
+}

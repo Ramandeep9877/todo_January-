@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/rocket.svg" type="image/svg" sizes="16x16">
+    <title>Todo_App</title>
+</head>
+
+<body>
+    <div id="root">
+        <header class="sticky-header">
+            <div class="header-row-1">
+
+                <div class="logo-container">
+                    <div class="logo-image-container"><img src="./assets/rocket.svg" alt="todo_app_logo"></div>
+                    <div class="logo-text-container">to<span>do</span></div>
+                </div>
+
+                <div class="search-and-filter-container">
+                    <div class="search-container">
+                        <span class="search-icon material-symbols-outlined">search</span>
+                        <input type="text" id="search-task-input" class="shrunk" placeholder="Search for tasks">
+                    </div>
+
+                    <div class="filter-container">
+                        <span class="filter-icon material-symbols-outlined">filter_alt</span>
+                        <div class="filter-categories-container">
+                            <div class="dropdown-wrapper">
+                                <select name="task-category-select" id="task-category-dropdown" class="shrunk">
+                                    <option value="">All tasks</option>
+                                    <option value="todo">To-Do</option>
+                                    <option value="in-progress">Started</option>
+                                    <option value="completed">Done</option>
+                                </select>
+                            </div>
+                            <div class="dropdown-wrapper">
+                                <select name="task-priority-select" id="task-priority-dropdown" class="shrunk">
+                                    <option value="">All priorities</option>
+                                    <option value="high">High</option>
+                                    <option value="mid">Medium</option>
+                                    <option value="low">Low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="add-item-form-container">
+                <form id="add-item-form">
+                    <div class="input-fields-container">
+                        <input type="text" name="card_title" id="task-title-input" placeholder="Enter your todo list task" required>
+                        <input id="task-date-input" type="date" name="due_date" required>
+                    </div>
+
+                    <button type="submit">Add<span class="material-symbols-outlined">add_circle</span></button>
+                </form>
+            </div>
+
+        </header>
+
+        <div class="main-wrapper">
+            <main>
+
+                <div class="task-list-accordion" id="todo-cards-container">
+                    <div class="accordion-header">
+                        <div class="header-info-container">
+                            <div class="task-list-title-container"><span>To Do</span>
+                                <div class="task-count">0</div>
+                            </div>
+
+                            <div class="high-priority-tasks"><span>High Priority    </span>
+                                <div class="high-priority-count task-count">0</div>
+                            </div>
+                        </div>
+                        <div class="material-symbols-outlined accordion-arrow arrow-up">expand_more</div>
+                    </div>
+
+                    <div class="task-list-content-container">
+                        <div class="task-list-placeholder">
+                            <div class="material-symbols-outlined">receipt_long</div>
+                            <div>You have no To-Do tasks yet</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="task-list-accordion" id="in-progress-cards-container">
+                    <div class="accordion-header">
+                        <div class="header-info-container">
+                            <div class="task-list-title-container"><span>Started</span>
+                                <div class="task-count">0</div>
+                            </div>
+
+                            <div class="high-priority-tasks"><span>High Priority    </span>
+                                <div class="high-priority-count task-count">0</div>
+                            </div>
+                        </div>
+                        <div class="material-symbols-outlined accordion-arrow">expand_more</div>
+                    </div>
+
+                    <div class="task-list-content-container closed-accordion">
+                        <div class="task-list-placeholder">
+                            <div class="material-symbols-outlined">receipt_long</div>
+                            <div>You have started any tasks yet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-list-accordion" id="completed-cards-container">
+                    <div class="accordion-header">
+                        <div class="header-info-container">
+                            <div class="task-list-title-container"><span>Completed</span>
+                                <div class="task-count">0</div>
+                            </div>
+
+                            <div class="high-priority-tasks"><span>High Priority    </span>
+                                <div class="high-priority-count task-count">0</div>
+                            </div>
+                        </div>
+                        <div class="material-symbols-outlined accordion-arrow">expand_more</div>
+                    </div>
+
+                    <div class="task-list-content-container closed-accordion">
+                        <div class="task-list-placeholder">
+                            <div class="material-symbols-outlined">receipt_long</div>
+                            <div>You have not completed any tasks yet</div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+
+<script src="index.js"></script>
+<script src="script.js"></script>
+
+
+</html>
